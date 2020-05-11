@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Dojo Survey</h1>
+        </div>
+        <div class="row">
+            <h3>Please complete the form below and submit!</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="/process" id="dojo_form" method="post">
+                    {% csrf_token %}
+                    <label for="your_name">Your Name:</label>
+                    <input type="text" id="your_name" name="your_name"><br>
+                    <label for="location">Dojo Location:</label>
+                    <select id="city" name="location">
+                        <option value="Portland">Portland</option>
+                        <option value="San_Diego">San Diego</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Los_Angeles">Los Angeles</option>
+                        <option value="New_York_City">New York City</option>
+                    </select><br>
+                    <label for="fav_language">Favorite Language:</label>
+                    <select id="language" name="fav_language">
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="English">English</option>
+                        <option value="Greek">Greek</option>
+                    </select><br>
+                    <label for="comments" id="comment">Comment (optional):</label><br>
+                    <textarea name="comments" form="dojo_form"></textarea><br>
+                    <button class="btn btn-primary" type="submit" form="dojo_form">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
